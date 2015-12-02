@@ -1,0 +1,105 @@
+{% load verleihfix_tags %}
+<html>
+<head>
+    <title>Verleihfix Django - {% block title %}...{% endblock %}</title>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="stylesheet" href="static/verleihfix.css">
+
+</head>
+<body>
+    <header>
+      <nav class="top-nav">
+            <div class="nav-wrapper">
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="terms">Nutzungsbedingungen</a></li>
+                    <li><a href="about">Über Verleihfix</a></li>
+                    {% if request.user.is_superuser %}
+                        <li><a href="admin">Admin</a></li>
+                    {% endif %}
+                    {% if request.user.is_authenticated %}
+                        <li><a href="accounts/logout/">Logout</a></li>
+                    {% else %}
+                        <li><a href="accounts/login/">Login</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+      </nav>
+      <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
+      <ul id="nav-mobile" class="side-nav fixed">
+        <li class="logo"><h4>{% appname %}</h4></li>
+        <li class="search">
+        <div class="search-wrapper card">
+            <input id="search"><i class="material-icons">search</i>
+            <div class="search-results"></div>
+          </div>
+        </li>
+        <li class="bold"><a href="/" class="active waves-effect waves-teal">Alle Geräte</a></li>
+        {% if request.user.is_authenticated %}
+            <li class="bold"><a href="lendings" class="active waves-effect waves-teal">Meine Ausleihen</a>
+            </li>
+            <li class="bold"><a href="settings" class="active waves-effect waves-teal">Einstellungen</a></li>
+        {%  endif %}
+    </li>
+      </ul>
+    </header>
+    <main>
+
+        <div class="container">
+            <!-- navbar goes here -->
+
+            <div class="row">
+                <div class="col s12 m10 l10">
+
+                    {% if messages %}
+                        {% for message in messages %}
+                            <script> Materialize.toast(message, 4000); </script>
+                            <div class="card-panel teal">
+                                <span class="white-text">{{ message }}</span>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    <!-- content -->
+                    {% block content %}...{%  endblock %}
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Verleihfix</h5>
+                <p class="grey-text text-lighten-4">Die einfache Online-Ausleihe.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="http://www.virtuos.uni-osnabrueck.de">virtUOS</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2015 Tobias Thelen
+            <a class="grey-text text-lighten-4 right" href="#!">Source Code</a>
+            </div>
+          </div>
+    </footer>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+
+    <! -- Application js code -->
+    <script src="/static/verleihfix.js"></script>
+</body>
+</html>

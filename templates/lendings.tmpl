@@ -1,0 +1,55 @@
+{% extends "base.tmpl" %}
+{% load verleihfix_tags %}
+{% block title %}Meine Ausleihen{% endblock %}
+
+{% block content %}
+
+    <!-- content -->
+    {%  if request.user.is_superuser %}
+        <h1>Alle Ausleihen</h1>
+    {% else %}
+        <h1>Meine Ausleihen</h1>
+    {% endif %}
+    {%  if lendings %}
+        {% if request.user.is_superuser %}<form>{% endif %}
+        <table>
+            <tr><th>Gerät</th>
+                {%  if request.user.is_superuser %} <th>Ausleiher</th> {% endif %}
+                <th>von</th>
+                <th>bis</th>
+                <th>Status</th>
+                {%  if request.user.is_superuser %} <th>Ausleihe</th> {%  endif %}
+                <th>Aktion</th></tr>
+            {% for lending in lendings %}
+            <tr>
+            <td>{{ lending.thing.type.name }}</td>
+            {% if request.user.is_superuser %} <td>{{ lending.user.first_name }} {{ lending.user.last_name }}</td> {% endif %}
+            <td>{{ lending.start }}</td>
+            <td>{{ lending.end }}</td>
+            <td>{{ lending.get_status_display }}</td>
+                    {%  if request.user.is_superuser %}
+                    <td>
+                    {% if lending.status == 'r' %}
+                        <a href="lending_status?lending={{ lending.id }}&new_status=l"><i class="material-icons" title="Abholung">flight_takeoff</i>
+                        &nbsp;
+                        <a href="lending_status?lending={{ lending.id }}&new_status=o"><i class="material-icons" title="Stornieren">delete</i>
+                    {% endif %}
+                    {% if lending.status == 'l' %}
+                        <a href="lending_status?lending={{ lending.id }}&new_status=x"><i class="material-icons" title="Rückgabe">flight_land</i>
+                    {% endif %}
+                </td>
+                {% endif %}
+            <td><a class="waves-effect waves-light btn modal-trigger" href="#modal-{{ lending.id }}"><i class="material-icons">mode_edit</i></a></td>
+            </tr>
+
+        {% endfor %}
+        </table>
+    {% if request.user.is_superuser %}
+        {% for lending in lendings %}
+          <!-- Modal Structure -->
+            {% lending_form lending %}
+        {% endfor %}
+    {% endif %}
+
+    {%  endif %}
+{% endblock %}
