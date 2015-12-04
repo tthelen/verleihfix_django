@@ -13,86 +13,93 @@
 
 </head>
 <body>
-    <header>
-      <nav class="top-nav">
-            <div class="nav-wrapper">
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="terms">Nutzungsbedingungen</a></li>
-                    <li><a href="about">Über Verleihfix</a></li>
-                    {% if request.user.is_superuser %}
-                        <li><a href="admin">Admin</a></li>
-                    {% endif %}
-                    {% if request.user.is_authenticated %}
-                        <li><a href="accounts/logout/">Logout</a></li>
-                    {% else %}
-                        <li><a href="accounts/login/">Login</a></li>
-                    {% endif %}
-                </ul>
+<header>
+
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">{% appname %}</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="/" class="">Alle Geräte</a></li>
+                {% if request.user.is_authenticated %}
+                    <li><a href="lendings" class="">{%  if request.user.is_superuser %}Alle Ausleihen{% else %}Meine Ausleihen{% endif %}</a></li>
+                    <li><a href="settings" class="">Einstellungen</a></li>
+                {%  endif %}
+                <li><a href="about">Über Verleihfix</a></li>
+                {% if request.user.is_superuser %}
+                    <li><a href="admin">Admin</a></li>
+                {% endif %}
+                {% if request.user.is_authenticated %}
+                    <li><a href="accounts/logout/">Logout</a></li>
+                {% else %}
+                    <li><a href="accounts/login/">Login</a></li>
+                {% endif %}
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="/" class="">Alle Geräte</a></li>
+                {% if request.user.is_authenticated %}
+                    <li><a href="lendings" class="">Meine Ausleihen</a></li>
+                    <li><a href="settings" class="">Einstellungen</a></li>
+                {%  endif %}
+                <li><a href="about">Über Verleihfix</a></li>
+                {% if request.user.is_superuser %}
+                    <li><a href="admin">Admin</a></li>
+                {% endif %}
+                {% if request.user.is_authenticated %}
+                    <li><a href="accounts/logout/">Logout</a></li>
+                {% else %}
+                    <li><a href="accounts/login/">Login</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+</header>
+<main>
+
+    <div class="container">
+        <!-- navbar goes here -->
+
+        <div class="row">
+            <div class="col s12 m10 l10">
+
+                {% if messages %}
+                    {% for message in messages %}
+                        <script> Materialize.toast(message, 4000); </script>
+                        <div class="card-panel teal">
+                            <span class="white-text">{{ message }}</span>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+                <!-- content -->
+                {% block content %}...{%  endblock %}
             </div>
-      </nav>
-      <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
-      <ul id="nav-mobile" class="side-nav fixed">
-        <li class="logo"><h4>{% appname %}</h4></li>
-        <li class="search">
-        <div class="search-wrapper card">
-            <input id="search"><i class="material-icons">search</i>
-            <div class="search-results"></div>
-          </div>
-        </li>
-        <li class="bold"><a href="/" class="active waves-effect waves-teal">Alle Geräte</a></li>
-        {% if request.user.is_authenticated %}
-            <li class="bold"><a href="lendings" class="active waves-effect waves-teal">Meine Ausleihen</a>
-            </li>
-            <li class="bold"><a href="settings" class="active waves-effect waves-teal">Einstellungen</a></li>
-        {%  endif %}
-    </li>
-      </ul>
-    </header>
-    <main>
-
+        </div>
+    </div>
+</main>
+<footer>
+    <footer class="page-footer">
         <div class="container">
-            <!-- navbar goes here -->
-
             <div class="row">
-                <div class="col s12 m10 l10">
-
-                    {% if messages %}
-                        {% for message in messages %}
-                            <script> Materialize.toast(message, 4000); </script>
-                            <div class="card-panel teal">
-                                <span class="white-text">{{ message }}</span>
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-
-                    <!-- content -->
-                    {% block content %}...{%  endblock %}
+                <div class="col l6 s12">
+                    <h5 class="white-text">Verleihfix</h5>
+                    <p class="grey-text text-lighten-4">Die einfache Online-Ausleihe.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="http://www.virtuos.uni-osnabrueck.de">virtUOS</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </main>
-    <footer>
-        <footer class="page-footer">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Verleihfix</h5>
-                <p class="grey-text text-lighten-4">Die einfache Online-Ausleihe.</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="http://www.virtuos.uni-osnabrueck.de">virtUOS</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="footer-copyright">
+        <div class="footer-copyright">
             <div class="container">
-            © 2015 Tobias Thelen
-            <a class="grey-text text-lighten-4 right" href="#!">Source Code</a>
+                © 2015 Tobias Thelen
+                <a class="grey-text text-lighten-4 right" href="#!">Source Code</a>
             </div>
-          </div>
+        </div>
     </footer>
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

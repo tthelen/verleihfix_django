@@ -26,4 +26,4 @@ def type_card(type):
 
 @register.simple_tag
 def appname():
-    return "Verleihfix"
+    return "Verleih<em>fix</em>"

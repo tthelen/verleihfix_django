@@ -12,6 +12,8 @@ urlpatterns = patterns('',
     url(r'^$', 'Verleihfix.views.home', name='home' ),
     url(r'^lend$', 'Verleihfix.views.lend', name='lend'),
     url(r'^lendings$', 'Verleihfix.views.lendings', name='lendings'),
+    url(r'^lending_status$', 'Verleihfix.views.lending_status', name='lending_status'),
+    url(r'^settings$', 'Verleihfix.views.settings', name='settings'),
     url(r'^accounts/login/?$', login, {'template_name': 'admin/login.html',
        'extra_context':{'next':'/'}}, name='login'),
     url(r'^accounts/logout/?$', logout, {'next_page': '/'})

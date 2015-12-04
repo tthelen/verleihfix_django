@@ -9,7 +9,9 @@ $(function () {
     $('.modal-trigger').leanModal();
     $('select').material_select();
     $('.scrollspy').scrollSpy();
-    $('.pinme').pushpin({ top: $('.pinme').offset().top });
+    //$('.pinme').pushpin({ top: $('.pinme').offset().top });
+    $('.pinme').pushpin({ top: 80 });
+    $(".button-collapse").sideNav();
 
     // German
 
@@ -67,3 +69,5 @@ $(function () {
     });
 
 });
+
+

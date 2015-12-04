@@ -6,6 +6,7 @@ from datetime import date, datetime
 class Category(models.Model):
     """A category groups certain types."""
     name = models.CharField(max_length=80)
+    icon = models.CharField(max_length=32)
 
     def types(self):
         return Type.objects.filter(category=self)
@@ -49,10 +50,10 @@ class Thing(models.Model):
             startdate = date.today()
         if not enddate:
             enddate = date.today()
-        overlapping = self.lending_set.filter(start__lte = startdate, end__gte = enddate)
+        overlapping = self.lending_set.filter(status__in=['l','r']).filter(start__lte = startdate, end__gte = enddate)
         return overlapping.count() == 0
 
-    def lend(self, user, startdate, enddate, status='reserved'):
+    def lend(self, user, startdate, enddate, status='r'):
         if self.is_available(startdate, enddate):
             l = Lending(thing=self, user=user, start=startdate, end=enddate, status=status)
             l.save()
