@@ -1,27 +1,18 @@
+{% load i18n %}
 <div class="card">
     <div class="card-image waves-effect waves-block waves-light">
         <img class="activator" src="{{ type.image.url }}">
     </div>
     <div class="card-content">
         <span class="card-title activator grey-text text-darken-4">{{ type.name }}<i class="material-icons right">more_vert</i></span>
-        <p> Aktuell: {{ type.is_available }} von {{ num_things }} Geräten verfügbar.  </p>
+        <p> {% blocktrans %}Aktuell: {{ type.is_available }} von {{ num_things }} Geräten verfügbar.{% endblocktrans %}  </p>
     </div>
     <div class="card-reveal">
         <span class="card-title grey-text text-darken-4">{{ type.name }}<i class="material-icons right">close</i></span>
         <p>{{ type.description }}</p>
-        <p> Aktuell: {{ type.is_available }} von {{ num_things }} Geräten verfügbar.  </p>
-        <h5>Ausleihen</h5>
-        <form action="lend">
-                <input type="hidden" name="type" value="{{ type.id }}">
-                <div class="input-field">
-                    <input type="date" class="datepicker" name="startdate" id="input_from_modal-{{ type.id }}">
-                    <label for="input_from_modal-{{ lending.id }}">Von:</label>
-                </div>
-                <div class="input-field">
-                    <input type="date" class="datepicker" name="enddate" id="input_to_modal-{{ type.id }}">
-                    <label for="input_to_modal-{{ lending.id }}">Bis:</label>
-                </div>
-                <input type="submit">
-        </form>
+        <p> {% blocktrans %}Aktuell: {{ type.is_available }} von {{ num_things }} Geräten verfügbar.{% endblocktrans %}  </p>
+    </div>
+    <div class="card-action">
+        <a href="{% url 'type' type.id %}">{% trans "Ausleihen" %}</a>
     </div>
 </div>

@@ -6,17 +6,19 @@
     <schema name="" catalog=""/>
     <table name="Verleihfix_category" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="icon" sqlType="VARCHAR(32)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="name" sqlType="VARCHAR(80)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>
+      <exported-key name="#FAKE_Verleihfix_type_1" table="Verleihfix_type" schema="" catalog="" columns="category_id"/>
       <exported-key name="#FAKE_Verleihfix_type_1" table="Verleihfix_type" schema="" catalog="" columns="category_id"/>
     </table>
     <table name="Verleihfix_lending" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="status" sqlType="VARCHAR(1)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="start" sqlType="DATE" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="thing_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="user_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="end" sqlType="DATE" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="VARCHAR(1)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>
       <foreign-key name="#FAKE_Verleihfix_lending_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
       <foreign-key name="#FAKE_Verleihfix_lending_2" columns="thing_id" ref-table="Verleihfix_thing" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
@@ -43,6 +45,7 @@
       <column name="category_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <primary-key columns="id"/>
       <foreign-key name="#FAKE_Verleihfix_type_1" columns="category_id" ref-table="Verleihfix_category" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <exported-key name="#FAKE_Verleihfix_thing_1" table="Verleihfix_thing" schema="" catalog="" columns="type_id"/>
       <exported-key name="#FAKE_Verleihfix_thing_1" table="Verleihfix_thing" schema="" catalog="" columns="type_id"/>
       <index name="Verleihfix_type_b583a629" unique="true" columns="category_id"/>
     </table>

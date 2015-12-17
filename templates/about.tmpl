@@ -1,0 +1,14 @@
+{% extends "base.tmpl" %}
+{% load i18n %}
+{% load verleihfix_tags %}
+{% block title %}{% blocktrans %}Über Verleihfix{% endblocktrans %}{% endblock %}
+
+{% block content %}
+<h1>{% trans "Verleihfix" %}</h1>
+
+<p>{% blocktrans %}Mit Verleihfix wird die Ausleihe und Verwaltung ausleihbarer Geräte zum Kinderspiel.
+    Sowohl Kunden als auch die Mitarbeiterinnen und Mitarbeiter an der Ausleihe profitieren
+    von einem übersichtlichen und leistungsfähigen Online-Ausleih-System.{% endblocktrans %}
+</p>
+    <p>Deine Sprache: {{  request.LANGUAGE_CODE }}</p>
+{% endblock %}

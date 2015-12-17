@@ -1,0 +1,219 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-17 11:59+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\Verleihfix\views.py:50
+#, python-format
+msgid ""
+"Ausleihvorgang erfolgreich. Das Gerät wurde reserviert. Bitte holen Sie es "
+"am %s ab."
+msgstr ""
+"Lending succeeded. The Device is now reserved for your. Please fetch it on "
+"%s."
+
+#: .\Verleihfix\views.py:53
+msgid "Das Gerät konnte nicht reserviert werden."
+msgstr "The device could not be reserved."
+
+#: .\Verleihfix\views.py:71
+msgid "Aktuell ausgeliehen"
+msgstr "Currently lended"
+
+#: .\Verleihfix\views.py:72 .\templates\lendings.tmpl:46
+msgid "Rückgabe"
+msgstr "Return"
+
+#: .\Verleihfix\views.py:74
+msgid "Reserviert"
+msgstr "Reserved"
+
+#: .\Verleihfix\views.py:75 .\templates\lendings.tmpl:21
+msgid "Ausleihe"
+msgstr "Lending"
+
+#: .\Verleihfix\views.py:76
+msgid "Zurückgegeben"
+msgstr "Returned"
+
+#: .\Verleihfix\views.py:78
+msgid "Storniert"
+msgstr "Cancelled"
+
+#: .\Verleihfix\views.py:105
+msgid "Status erfolgreich geändert."
+msgstr "Status change sucessfull."
+
+#: .\Verleihfix\views.py:108
+msgid "Ungültiger Status!"
+msgstr "Invalid status!"
+
+#: .\Verleihfix\views.py:111
+msgid "Das darfst du nicht."
+msgstr "You are not allowed to do that."
+
+#: .\templates\about.tmpl:4 .\templates\base.tmpl:29
+#: .\templates\base.tmpl.py:46
+msgid "Über Verleihfix"
+msgstr "About Lendfix"
+
+#: .\templates\about.tmpl:7
+#, fuzzy
+#| msgid "Über Verleihfix"
+msgid "Verleihfix"
+msgstr "About Lendfix"
+
+#: .\templates\about.tmpl:9
+msgid ""
+"Mit Verleihfix wird die Ausleihe und Verwaltung ausleihbarer Geräte zum "
+"Kinderspiel.\n"
+"    Sowohl Kunden als auch die Mitarbeiterinnen und Mitarbeiter an der "
+"Ausleihe profitieren\n"
+"    von einem übersichtlichen und leistungsfähigen Online-Ausleih-System."
+msgstr ""
+
+#: .\templates\base.tmpl:5
+msgid "Verleihfix Django"
+msgstr "Lendfix Django"
+
+#: .\templates\base.tmpl:24 .\templates\base.tmpl.py:41
+msgid "Alle Geräte"
+msgstr "All devices"
+
+#: .\templates\base.tmpl:26 .\templates\lendings.tmpl:9
+msgid "Alle Ausleihen"
+msgstr "All lendings"
+
+#: .\templates\base.tmpl:26 .\templates\base.tmpl.py:43
+#: .\templates\lendings.tmpl:4 .\templates\lendings.tmpl.py:11
+msgid "Meine Ausleihen"
+msgstr "My lendings"
+
+#: .\templates\base.tmpl:27 .\templates\base.tmpl.py:44
+#: .\templates\settings.tmpl:5 .\templates\settings.tmpl.py:10
+msgid "Einstellungen"
+msgstr "Settings"
+
+#: .\templates\base.tmpl:31 .\templates\base.tmpl.py:48
+msgid "Admin"
+msgstr "Admin"
+
+#: .\templates\base.tmpl:34 .\templates\base.tmpl.py:51
+msgid "Logout"
+msgstr ""
+
+#: .\templates\base.tmpl:36 .\templates\base.tmpl.py:53
+msgid "Login"
+msgstr ""
+
+#: .\templates\base.tmpl:89
+msgid "Die einfache Online-Ausleihe."
+msgstr "The easy online lending service."
+
+#: .\templates\base.tmpl:94
+msgid "virtUOS"
+msgstr ""
+
+#: .\templates\base.tmpl:101
+msgid "© 2015 Tobias Thelen"
+msgstr ""
+
+#: .\templates\base.tmpl:102
+msgid "Source Code"
+msgstr ""
+
+#: .\templates\lendings.tmpl:16
+msgid "Gerät"
+msgstr "Device"
+
+#: .\templates\lendings.tmpl:17
+msgid "Ausleiher"
+msgstr "Lender"
+
+#: .\templates\lendings.tmpl:18
+msgid "von"
+msgstr "from"
+
+#: .\templates\lendings.tmpl:19
+msgid "bis"
+msgstr "to"
+
+#: .\templates\lendings.tmpl:20
+msgid "Status"
+msgstr "Status"
+
+#: .\templates\lendings.tmpl:22
+msgid "Aktion"
+msgstr "Action"
+
+#: .\templates\lendings.tmpl:41
+msgid "Abholung"
+msgstr "Fetching"
+
+#: .\templates\lendings.tmpl:54
+msgid "Stornieren"
+msgstr "Cancel"
+
+#: .\templates\settings.tmpl:16
+msgid "Zurückgegebene Geräte in Ausleihübersicht anzeigen"
+msgstr "Show returned devices in lending list"
+
+#: .\templates\settings.tmpl:20
+msgid "Stornierte Reservierungen in Ausleihübersicht anzeigen"
+msgstr "Show cancelled reservations in lending list"
+
+#: .\templates\settings.tmpl:23
+msgid "Einstellungen ändern"
+msgstr "Change settings"
+
+#: .\templates\settings.tmpl:28
+msgid "Sprache"
+msgstr "Language"
+
+#: .\templates\things.tmpl:5 .\templates\type.tmpl:5
+msgid "Geräte"
+msgstr "Devices"
+
+#: .\templates\things.tmpl:10
+msgid "Verfügbare Geräte"
+msgstr "Available devices"
+
+#: .\templates\type.tmpl:18
+msgid "Verfügbarkeit"
+msgstr "Availability"
+
+#: .\templates\type.tmpl:19 .\templates\type_card.tmpl:8
+#: .\templates\type_card.tmpl.py:13
+#, python-format
+msgid "Aktuell: %(type.is_available)s von %(num_things)s Geräten verfügbar."
+msgstr "Currently %(type.is_available)s of %(num_things)s devices available."
+
+#: .\templates\type.tmpl:24 .\templates\type_card.tmpl:16
+msgid "Ausleihen"
+msgstr "Lendings"
+
+#: .\templates\type.tmpl:29
+msgid "Von:"
+msgstr "From:"
+
+#: .\templates\type.tmpl:33
+msgid "Bis:"
+msgstr "To:"
+
+#: .\templates\type.tmpl:40
+msgid "Beschreibung"
+msgstr "Description"

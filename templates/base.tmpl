@@ -1,7 +1,8 @@
+{% load i18n %}
 {% load verleihfix_tags %}
 <html>
 <head>
-    <title>Verleihfix Django - {% block title %}...{% endblock %}</title>
+    <title>{% blocktrans %}Verleihfix Django{% endblocktrans %} - {% block title %}...{% endblock %}</title>
     <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
@@ -20,35 +21,36 @@
             <a href="#!" class="brand-logo">{% appname %}</a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="/" class="">Alle Geräte</a></li>
+                <li><a href="{% url 'home' %}" class="">{% blocktrans %}Alle Geräte{% endblocktrans %}</a></li>
                 {% if request.user.is_authenticated %}
-                    <li><a href="lendings" class="">{%  if request.user.is_superuser %}Alle Ausleihen{% else %}Meine Ausleihen{% endif %}</a></li>
-                    <li><a href="settings" class="">Einstellungen</a></li>
+                    <li><a href="{% url 'lendings' %}" class="">{%  if request.user.is_superuser %}{% blocktrans %}Alle Ausleihen{% endblocktrans %}{% else %}{% blocktrans %}Meine Ausleihen{% endblocktrans %}{% endif %}</a></li>
+                    <li><a href="{% url 'settings' %}" class="">{% trans "Einstellungen" %}</a></li>
                 {%  endif %}
-                <li><a href="about">Über Verleihfix</a></li>
+                <li><a href="{% url 'about' %}">{% blocktrans %}Über Verleihfix{% endblocktrans %}</a></li>
                 {% if request.user.is_superuser %}
-                    <li><a href="admin">Admin</a></li>
+                    <li><a href="{% url 'admin:index' %}">{% trans "Admin" %}</a></li>
                 {% endif %}
                 {% if request.user.is_authenticated %}
-                    <li><a href="accounts/logout/">Logout</a></li>
+                    <li><a href="{% url 'logout' %}">{% trans "Logout" %}</a></li>
                 {% else %}
-                    <li><a href="accounts/login/">Login</a></li>
+                    <li><a href="{% url 'login' %}">{% trans "Login" %}</a></li>
                 {% endif %}
+            <li>Sprache: {{ request.LANGUAGE_CODE }}</li>
             </ul>
             <ul class="side-nav" id="mobile-demo">
-                <li><a href="/" class="">Alle Geräte</a></li>
+                <li><a href="{% url 'home' %}" class="">{% blocktrans %}Alle Geräte{% endblocktrans %}</a></li>
                 {% if request.user.is_authenticated %}
-                    <li><a href="lendings" class="">Meine Ausleihen</a></li>
-                    <li><a href="settings" class="">Einstellungen</a></li>
+                    <li><a href="{% url 'lendings' %}" class="">{% blocktrans %}Meine Ausleihen{% endblocktrans %}</a></li>
+                    <li><a href="{% url 'settings' %}" class="">{% trans "Einstellungen" %}</a></li>
                 {%  endif %}
-                <li><a href="about">Über Verleihfix</a></li>
+                <li><a href="{% url 'about' %}">{% blocktrans %}Über Verleihfix{% endblocktrans %}</a></li>
                 {% if request.user.is_superuser %}
-                    <li><a href="admin">Admin</a></li>
+                    <li><a href="{% url 'admin:index' %}">{% trans "Admin" %}</a></li>
                 {% endif %}
                 {% if request.user.is_authenticated %}
-                    <li><a href="accounts/logout/">Logout</a></li>
+                    <li><a href="{% url 'logout' %}">{% trans "Logout" %}</a></li>
                 {% else %}
-                    <li><a href="accounts/login/">Login</a></li>
+                    <li><a href="{% url 'login' %}">{% trans "Login" %}</a></li>
                 {% endif %}
             </ul>
         </div>
@@ -83,21 +85,21 @@
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <h5 class="white-text">Verleihfix</h5>
-                    <p class="grey-text text-lighten-4">Die einfache Online-Ausleihe.</p>
+                    <h5 class="white-text">{% appname %}</h5>
+                    <p class="grey-text text-lighten-4">{% blocktrans %}Die einfache Online-Ausleihe.{% endblocktrans %}</p>
                 </div>
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Links</h5>
                     <ul>
-                        <li><a class="grey-text text-lighten-3" href="http://www.virtuos.uni-osnabrueck.de">virtUOS</a></li>
+                        <li><a class="grey-text text-lighten-3" href="http://www.virtuos.uni-osnabrueck.de">{% trans "virtUOS" %}</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="footer-copyright">
             <div class="container">
-                © 2015 Tobias Thelen
-                <a class="grey-text text-lighten-4 right" href="#!">Source Code</a>
+                {% blocktrans %}© 2015 Tobias Thelen{% endblocktrans %}
+                <a class="grey-text text-lighten-4 right" href="#!">{% blocktrans %}Source Code{% endblocktrans %}</a>
             </div>
         </div>
     </footer>
@@ -107,6 +109,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
 
     <! -- Application js code -->
+    <script type="text/javascript" src="/jsi18n/"></script>
     <script src="/static/verleihfix.js"></script>
 </body>
 </html>

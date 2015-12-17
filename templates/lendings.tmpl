@@ -1,24 +1,25 @@
 {% extends "base.tmpl" %}
+{% load i18n %}
 {% load verleihfix_tags %}
-{% block title %}Meine Ausleihen{% endblock %}
+{% block title %}{% blocktrans %}Meine Ausleihen{% endblocktrans %}{% endblock %}
 
 {% block content %}
 
     {%  if request.user.is_superuser %}
-        <h1>Alle Ausleihen</h1>
+        <h1>{% blocktrans %}Alle Ausleihen{% endblocktrans %}</h1>
     {% else %}
-        <h1>Meine Ausleihen</h1>
+        <h1>{% blocktrans %}Meine Ausleihen{% endblocktrans %}</h1>
     {% endif %}
 
     <table>
         <tr>
-            <th>Gerät</th>
-            {%  if request.user.is_superuser %} <th>Ausleiher</th> {% endif %}
-            <th>von</th>
-            <th>bis</th>
-            <th>Status</th>
-            {%  if request.user.is_superuser %} <th>Ausleihe</th> {%  endif %}
-            <th>Aktion</th>
+            <th>{% trans "Gerät" %}</th>
+            {%  if request.user.is_superuser %} <th>{% trans "Ausleiher" %}</th> {% endif %}
+            <th>{% trans "von" %}</th>
+            <th>{% trans "bis" %}</th>
+            <th>{% trans "Status" %}</th>
+            {%  if request.user.is_superuser %} <th>{% trans "Ausleihe" %}</th> {%  endif %}
+            <th>{% trans "Aktion" %}</th>
         </tr>
         {% for subview in subviews %}
             {% if subview.num > 0 %}
@@ -37,12 +38,12 @@
                                 <td>
                                     {% if lending.status == 'r' %}
                                         <a href="lending_status?lending={{ lending.id }}&new_status=l">
-                                            <i class="material-icons" title="Abholung">flight_takeoff</i>
+                                            <i class="material-icons" title="{% trans "Abholung" %}">flight_takeoff</i>
                                         </a>
                                     {% endif %}
                                     {% if lending.status == 'l' %}
                                         <a href="lending_status?lending={{ lending.id }}&new_status=x">
-                                            <i class="material-icons" title="Rückgabe">flight_land</i>
+                                            <i class="material-icons" title="{% trans "Rückgabe" %}">flight_land</i>
                                         </a>
                                     {% endif %}
                                 </td>
@@ -50,7 +51,7 @@
 
                             <td>
                                 {% if subview.cancel %}
-                                    <a href="lending_status?lending={{ lending.id }}&new_status=o"><i class="material-icons" title="Stornieren">delete</i>
+                                    <a href="lending_status?lending={{ lending.id }}&new_status=o"><i class="material-icons" title="{% trans "Stornieren" %}">delete</i>
                                 {% endif %}
                             </td>
 

@@ -1,0 +1,47 @@
+{% extends "base.tmpl" %}
+{% load i18n %}
+{% load verleihfix_tags %}
+
+{% block title %}{% trans "Geräte" %}{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col s12 m6 l6">
+            <h4>{{ type.name }}</h4>
+            <div class="divider"></div>
+            <div class="section">
+                <img src="{{ type.image.url }}" class="responsive-img">
+                <p class="hide-on-med-and-up">{{ type.description }}</p>
+            </div>
+            <div class="divider"></div>
+            <div class="section">
+                <h4>{% trans "Verfügbarkeit" %}</h4>
+                <p> {% blocktrans %}Aktuell: {{ type.is_available }} von {{ num_things }} Geräten verfügbar.{% endblocktrans %}  </p>
+                <div id="lending_calendar"></div>
+            </div>
+            <div class="divider"></div>
+            <div class="section">
+                <h4>{% trans "Ausleihen" %}</h4>
+                <form action="{% url 'lend' %}">
+                    <input type="hidden" name="type" value="{{ type.id }}">
+                    <div class="input-field">
+                        <input type="date" class="datepicker" name="startdate" id="input_from_modal-{{ type.id }}">
+                        <label for="input_from_modal-{{ lending.id }}">{% trans "Von:" %}</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="date" class="datepicker" name="enddate" id="input_to_modal-{{ type.id }}">
+                        <label for="input_to_modal-{{ lending.id }}">{% trans "Bis:" %}</label>
+                    </div>
+                    <input type="submit">
+                </form>
+            </div>
+        </div>
+        <div class="col l6 m6" class="hide-on-small">
+            <h4>{% trans "Beschreibung" %}</h4>
+            <div class="divider"></div>
+            <div class="section">
+                <p>{{ type.description }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

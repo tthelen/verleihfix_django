@@ -57,7 +57,7 @@ class Thing(models.Model):
         if self.is_available(startdate, enddate):
             l = Lending(thing=self, user=user, start=startdate, end=enddate, status=status)
             l.save()
-            # TODO: check for overlaps!
+            # TODO: check for overlaps again!
             return True
         else:
             return False
