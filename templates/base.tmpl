@@ -35,7 +35,6 @@
                 {% else %}
                     <li><a href="{% url 'login' %}">{% trans "Login" %}</a></li>
                 {% endif %}
-            <li>Sprache: {{ request.LANGUAGE_CODE }}</li>
             </ul>
             <ul class="side-nav" id="mobile-demo">
                 <li><a href="{% url 'home' %}" class="">{% blocktrans %}Alle Geräte{% endblocktrans %}</a></li>
@@ -109,7 +108,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
 
     <! -- Application js code -->
-    <script type="text/javascript" src="/jsi18n/"></script>
+    <script type="text/javascript" src="{% url 'javascript-catalog' %}"></script>
     <script src="/static/verleihfix.js"></script>
 </body>
 </html>

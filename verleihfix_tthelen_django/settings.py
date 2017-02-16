@@ -22,14 +22,13 @@ SECRET_KEY = 'ezk63jdm^#80fot9lk6i+yf-k33$al(*0n&pg+eyxw5t!(@_cx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
 
 # Application definition
-
 INSTALLED_APPS = (
+    'modeltranslation', # http://django-modeltranslation.readthedocs.org/en/latest/installation.html#setup
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'Verleihfix',
 )
+
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -68,6 +68,8 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
+LOCALE_PATHS = ( os.path.join(BASE_DIR, 'locale'), )
+
 LANGUAGE_CODE = 'de-DE'
 TIME_ZONE = 'UTC'
 USE_I18N = True
@@ -76,7 +78,8 @@ USE_TZ = True
 
 LANGUAGES = (
   ('de', 'Deutsch'),
-  ('en', 'English')
+  ('en', 'English'),
+  ('fr', 'Francais')
 )
 
 # Static files (CSS, JavaScript, Images)
@@ -84,7 +87,31 @@ LANGUAGES = (
 
 STATIC_URL = '/static/'
 
-TEMPLATE_DIRS = (os.path.join(BASE_DIR,  'templates'),)
+# TEMPLATE_DIRS = (os.path.join(BASE_DIR,  'templates'),)
+# TEMPLATE_DEBUG = True
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            'templates' # insert your TEMPLATE_DIRS here
+        ],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                # Insert your TEMPLATE_CONTEXT_PROCESSORS here or use this
+                # list if you haven't customized them:
+                'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
 
 MEDIA_ROOT = os.path.join(BASE_DIR,  'media')
 MEDIA_URL = '/media/'

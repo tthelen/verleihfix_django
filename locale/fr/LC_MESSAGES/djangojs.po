@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-18 13:54+0100\n"
+"POT-Creation-Date: 2015-12-18 14:02+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,54 +16,55 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: .\Verleihfix\static\verleihfix.js:18
 msgid "Januar"
-msgstr "January"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:18
 msgid "Februar"
-msgstr "February"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:18
 msgid "März"
-msgstr "March"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:18
 msgid "April"
-msgstr "April"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:19 .\Verleihfix\static\verleihfix.js:21
 msgid "Mai"
-msgstr "May"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:19
 msgid "Juni"
-msgstr "June"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:19
 msgid "Juli"
-msgstr "July"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:19
 msgid "August"
-msgstr "August"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:20
 msgid "September"
-msgstr "September"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:20
 msgid "Oktober"
-msgstr "October"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:20
 msgid "November"
-msgstr "November"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:20
 msgid "Dezember"
-msgstr "December"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:21
 msgid "Jan"
@@ -75,7 +76,7 @@ msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:21
 msgid "Mär"
-msgstr "Mar"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:21
 msgid "Apr"
@@ -99,7 +100,7 @@ msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:21
 msgid "Okt"
-msgstr "Oct"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:21
 msgid "Nov"
@@ -107,80 +108,80 @@ msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:21
 msgid "Dez"
-msgstr "Dec"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:22
 msgid "Sonntag"
-msgstr "Sunday"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:22
 msgid "Montag"
-msgstr "Monday"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:22
 msgid "Dienstag"
-msgstr "Tuesday"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:22
 msgid "Mittwoch"
-msgstr "Wednesday"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:22
 msgid "Donnerstag"
-msgstr "Thursday"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:22
 msgid "Freitag"
-msgstr "Friday"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:22
 msgid "Samstag"
-msgstr "Saturday"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:23 .\Verleihfix\static\verleihfix.js:76
 msgid "So"
-msgstr "Sun"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:23 .\Verleihfix\static\verleihfix.js:76
 msgid "Mo"
-msgstr "Mon"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:23 .\Verleihfix\static\verleihfix.js:76
 msgid "Di"
-msgstr "Tue"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:23 .\Verleihfix\static\verleihfix.js:76
 msgid "Mi"
-msgstr "Wed"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:23 .\Verleihfix\static\verleihfix.js:76
 msgid "Do"
-msgstr "Thu"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:23 .\Verleihfix\static\verleihfix.js:76
 msgid "Fr"
-msgstr "Fri"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:23 .\Verleihfix\static\verleihfix.js:76
 msgid "Sa"
-msgstr "Sat"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:24
 msgid "Heute"
-msgstr "today"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:25
 msgid "Löschen"
-msgstr "Delete"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:26
 msgid "Schließen"
-msgstr "Close"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:28
 msgid "dddd, dd. mmmm yyyy"
-msgstr "dddd, mmmm/dd/yyyy"
+msgstr ""
 
 #: .\Verleihfix\static\verleihfix.js:29
 msgid "yyyy-mm-dd"
-msgstr "yyyy-mm-dd"
+msgstr ""
