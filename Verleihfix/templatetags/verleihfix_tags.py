@@ -1,4 +1,5 @@
 from django import template
+from django.utils.safestring import mark_safe
 
 register = template.Library()
 
@@ -26,4 +27,4 @@ def type_card(type):
 
 @register.simple_tag
 def appname():
-    return "Verleih<em>fix</em>"
+    return mark_safe("virtUOS Geräteausleihe")
