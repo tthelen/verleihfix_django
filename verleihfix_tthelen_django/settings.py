@@ -23,7 +23,7 @@ SECRET_KEY = 'ezk63jdm^#80fot9lk6i+yf-k33$al(*0n&pg+eyxw5t!(@_cx'
 DEBUG = True
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['vm009.rz.uni-osnabrueck.de','vm009.rz.uos.de']
 
 
 # Application definition
@@ -94,7 +94,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            'templates' # insert your TEMPLATE_DIRS here
+            os.path.join(BASE_DIR, 'templates') # insert your TEMPLATE_DIRS here
         ],
         'APP_DIRS': True,
         'OPTIONS': {
